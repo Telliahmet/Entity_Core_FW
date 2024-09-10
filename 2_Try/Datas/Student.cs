@@ -26,6 +26,7 @@ namespace _2_Try.Datas
         public string StudentCourses { get; set; }
 
         public int GradeId { get; set; }
-        public Grade Grade { get; set; }
+        public Grade Grade { get; set; }        
+        public StudentAddress Address { get; internal set; }
     }
 }

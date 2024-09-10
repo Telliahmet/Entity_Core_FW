@@ -175,6 +175,30 @@ public class Program
             //2. Calling SaveChanges to insert a new record into Students table
             context.SaveChanges();
         }
+
+
+        // Insert Relational Data - Ilişkisel Veri Ekleme
+
+        var stdAddress = new StudentAddress()
+        {
+            City = "SFO",
+            State = "CA",
+            Country = "USA"
+        };
+
+        var std3 = new Student()
+        {
+            FirstName = "Steve",
+            Address = stdAddress
+        };
+        using (var context = new SchoolContext())
+        {
+            // Attach an entity to DbContext with Added state
+            context.Add<Student>(std3);
+
+            // Calling SaveChanges to insert a new record into Students table
+            context.SaveChanges();
+        }
     }
     public static string GetName() //Querying Ekleme Icın
     {
