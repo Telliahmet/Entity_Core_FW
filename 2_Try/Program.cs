@@ -55,17 +55,17 @@ public class Program
 
         using (var context = new SchoolContext())
         {
-            var std = new Student()
+            var std2 = new Student()
             {
                 FirstName = "Bill",
                 LastName = "Gates",
                 Weight = 72,
                 Height = 1.77m
             };
-            context.Students.Add(std);
+            //context.Students.Add(std2);
 
             // or
-            // context.Add<Student>(std);
+            context.Add<Student>(std2);
             var v = context.SaveChanges();
         }
 
@@ -156,8 +156,26 @@ public class Program
                                     GradeTeachers = s.Grade.Teachers
                                 })
                                 .FirstOrDefault();
-    }
 
+
+        //----------------------
+
+        var std = new Student() { FirstName = "Bill" };
+
+        using (var context = new SchoolContext())
+        {
+            //1. Attach an entity to context with Added EntityState
+            context.Add<Student>(std);
+
+            //or the followings are also valid
+            // context.Students.Add(std);
+            // context.Entry<Student>(std).State = EntityState.Added;
+            // context.Attach<Student>(std);
+
+            //2. Calling SaveChanges to insert a new record into Students table
+            context.SaveChanges();
+        }
+    }
     public static string GetName() //Querying Ekleme Icın
     {
         return "Bill";
