@@ -50,7 +50,7 @@ public class Program
         //    Console.Write(context.Entry(disconnectedEntity).State);
         //}
 
-
+        //try
         ////---------------------------------------
         ////Veri EKLEME:
 
