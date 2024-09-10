@@ -2,11 +2,11 @@
 
 public class StudentAddress
 {
-    public StudentAddress()
-    {
+    //public StudentAddress()
+    //{
 
 
-    }
+    //}
 
     public string City { get; set; }
     public string State { get; set; }
