@@ -7,6 +7,7 @@ public class Program
 {
     public static void Main()
     {
+        // try
         //using (var context = new SchoolContext())
         //{
         //    retrieve entity
